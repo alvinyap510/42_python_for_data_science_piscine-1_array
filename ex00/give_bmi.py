@@ -1,9 +1,12 @@
-def give_bmi(height: list[int or float], weight: list[int or float]) -> list[int or float]:
+def give_bmi(
+        height: list[int or float],
+        weight: list[int or float]
+) -> list[int or float]:
     '''
-    Takes in 2 arrays, one representing height and the other representing weight,
-    and return an array of bmi numbers
+    Takes in 2 arrays, one representing height and the other representing
+    weight, and return an array of bmi numbers
     '''
-    assert len(height) == len(weight), "the length of height array and weight array should be the same"
+    assert len(height) == len(weight), "invalid heght and weight length"
     for h, w in zip(height, weight):
         if not isinstance(h, (int, float)) or not isinstance(w, (int, float)):
             raise AssertionError("arguments must be type int or float")
