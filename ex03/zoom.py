@@ -1,3 +1,4 @@
+import numpy as np
 from PIL import Image
 from load_image import ft_load
 import matplotlib.pyplot as plt
@@ -27,12 +28,19 @@ def main():
                                   start_column:end_column, :]
         new_img = Image.fromarray(new_img_array)
         new_img = new_img.convert("L")
+        new_gray_array = np.array(new_img)
+        print(
+            "TNew shape after slicing: " +
+            f"{new_gray_array.reshape(400,400,1).shape} or " +
+            f"{new_gray_array.shape} ")
+        new_gray_array = new_gray_array.reshape(400, 400, 1)
+        print(new_gray_array)
         plt.imshow(new_img, cmap="gray")
         plt.show()
     except Exception as e:
         print(f"Error: {e}")
     except KeyboardInterrupt:
-        print("K thanks bye")
+        print("Keyboard interupted, exiting...")
 
 
 if __name__ == "__main__":
