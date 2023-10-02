@@ -9,7 +9,7 @@ def slice_me(family: list, start: int, end: int) -> list:
     param1 (family: list): A list that will be truncated.
     param2 (start: int): Starting index.
     param3 (end: int): Ending index.
-    
+
     Returns:
     list: The list that has been truncated.
     '''
